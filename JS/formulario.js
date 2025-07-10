@@ -19,7 +19,7 @@ function mostrarMensaje(evt) {
   let mensajeFinal = `Bienvenido/a ${nombre} ${apellido}, usted `;
   mensajeFinal += (edad > 17)
     ? `es mayor, mensaje: ${mensajeUsuario}`
-    : `es menor, mensaje: ${mensajeUsuario}`;
+    : `es menor, no puede participar de nuestros servidores igual deje su mensaje: ${mensajeUsuario}`;
 
   // Mostrar el mensaje (en consola o podés mostrarlo en la página)
   console.log(mensajeFinal);

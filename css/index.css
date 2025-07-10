@@ -29,6 +29,22 @@ body {
   image-rendering: auto;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+
 .p {
   color: white;
   text-align: center;
@@ -80,7 +96,7 @@ body {
 }
 
 .imagen-portada {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   border-radius: 10px;
 }
@@ -105,9 +121,9 @@ body {
 }
 
 /* Flex container para merchandising */
-.flex-container {
+.productos {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: row;
   justify-content: center;
   gap: 20px;
   padding: 20px 0;
@@ -118,7 +134,7 @@ body {
 /* Items de productos con borde redondeado */
 .item {
   flex: 1 1 250px;
-  max-width: 300px;
+  max-width: 200px;
   border: 2px solid black;
   background-color: black;
   color: white;
@@ -236,8 +252,8 @@ body {
   height: 0;
   overflow: hidden;
   margin-bottom: 30px;
-  width: 100%;
-  max-width: 800px;
+  width: 50%;
+  max-width: 50%;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
@@ -286,3 +302,7 @@ body {
     padding: 20px 20px 5%;
   }
 
+h2 {
+  text-align: center;
+  color: aliceblue;
+}
