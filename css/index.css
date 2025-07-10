@@ -1,14 +1,13 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
 
 .logo {
   background-image: url("../Img/LOgo.jpg"); 
   background-size: contain;       
-  background-position: left;  
+  background-position: left center;  
   background-repeat: no-repeat; 
   width: 25%;                 
-  height: 250px;                
+  height: 250px;  
+  min-width: 150px;              
 }
 
 .portada {
@@ -16,76 +15,26 @@
   background-size: cover;       
   background-position: center; 
   width: 100%;                  
-  height:10%;                
-
+  height: 250px; /* altura fija mejor que 10% */
 }
-
 
 body {
   font-family: 'PT Sans', sans-serif;
-}
-
-.body {
+  margin: 0;
+  padding-top: 60px; /* espacio para nav fijo */
   background-image: url("../Img/zombies2.jpg");
   background-size: cover;       
   background-position: center;  
   background-repeat: no-repeat; 
   image-rendering: auto;
 }
-  
-  
-
-.abs {
-    width: 100%; 
-    height: 50%;
-    border: 2px solid red;
-    border-radius: 10px;
-}
-
 
 .p {
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    font-family: 'Roboto mono';
-
-  }
-
-
-.nav-list {
-    list-style: none;
-    text-emphasis: none;
-    color: red;   
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
 }
-
-.nav-menu li a:hover {
-  background: rgba(255,255,255,0.2);  /* fondo semitransparente */
-  color: red;                       /* cambia color del texto */
-  border-radius: 4px;
-}
-
-
-
-
-.caja{
-  padding: 10%;
-}
-
-.caja1{
-  border: 2px solid red;
-  margin: 5%;
-  background-color:black; 
-}
-
-
-.conteedor-flex{
-  display: flex;
-  border: 2px solid black;
-  height: 150 px;
-  flex-direction: row;
-}
-
-
 
 .nav-menu {
   position: fixed;      
@@ -97,28 +46,51 @@ body {
   display: flex;
   justify-content: space-around;
   list-style: none;
-  padding: 0;
+  padding: 10px 0;
   margin: 0;
   background-color: black;
   flex-wrap: wrap;
 }
 
-
 .nav-menu a {
   color: red;
-  text-decoration: none; /* opcional, para quitar el subrayado */
+  text-decoration: none;
+  padding: 8px 12px;
+  font-weight: bold;
+  display: block;
+  transition: background-color 0.3s ease;
 }
 
-.main {
-  padding-top: 50px;
+.nav-menu li a:hover {
+  background: rgba(255,255,255,0.2);
+  color: red;
+  border-radius: 4px;
 }
 
+.contenedor {
+  max-width: 1200px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
 
+.imagen-portada {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 
+/* Video responsive */
 .video-responsive {
+  width: 100%;
   max-width: 800px;        
-  margin: 0 auto;          
   aspect-ratio: 16 / 9;    
+  margin: 20px auto;
   background: black;       
   overflow: hidden;
   border-radius: 12px;     
@@ -131,101 +103,148 @@ body {
   display: block;
   border: none;
 }
-/* Merchandasing*/
 
+/* Flex container para merchandising */
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-  padding: 20px;
   justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Items de productos con borde redondeado */
 .item {
+  flex: 1 1 250px;
+  max-width: 300px;
   border: 2px solid black;
   background-color: black;
   color: white;
   text-align: center;
   padding: 3%;
-  border-radius: 2px;
+  border-radius: 15px;  /* borde redondeado */
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.item:hover {
+  box-shadow: 0 0 10px 3px rgba(0, 255, 0, 0.7);
 }
 
 .precio {
   font-size: x-large;
+  margin: 10px 0;
 }
 
 .descripcion {
-  font-size: small
+  font-size: small;
 }
 
 .btn {
   background-color: green;
-  padding: 3%;
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+.btn:hover {
+  background-color: darkgreen;
+}
 
+/* Contenedor de la historia con borde redondeado */
+.caja1 {
+  border: 2px solid red;
+  margin: 5%;
+  background-color: black;
+  border-radius: 15px;  /* borde redondeado */
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-/*Footer*/
+.caja1 h1, .caja1 p {
+  color: white;
+  margin: 0 0 10px 0;
+  font-family: 'PT Sans', sans-serif;
+}
 
+/* Footer */
 .footer {
   background-color: black;
   color: white;
   font-family: 'Roboto', Times, serif;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 10px;
   width: 100%;
+  box-sizing: border-box;
 }
 
-
+/* Formulario */
 .formulario {
   border: 2px solid red;
-  padding: 20px 40px 5%; 
+  padding: 20px 40px 5%;
   border-radius: 10px;
   text-align: center;
   background-color: brown;
-  max-width: 500px; 
-  margin: 40px auto; 
-  color: white; 
+  max-width: 500px;
+  width: 90%;
+  margin: 40px auto;
+  color: white;
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
-.boton {
-  border-radius: 2px;
-}
-
-
-.contenedor {
+/* Contenedor de enlaces sociales */
+.social-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
   align-items: center;
-  text-align: center;
-  padding: 20px;
+  gap: 8px;
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.imagen-portada {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px; /* opcional */
+.social-link:hover {
+  color: #ff6666;
 }
 
-.texto h2 {
-  margin-top: 20px;
-  font-size: 2rem;
+.icon-rojo {
+  color: red;
+  width: 40px;
+  height: 40px;
 }
 
-.texto p {
-  max-width: 800px;
-  line-height: 1.5;
-  font-size: 1rem;
-}
-
+/* Mapas con borde redondeado y sombra */
 .iframe-responsive {
   position: relative;
-  padding-bottom: 56.25%; /* Proporción 16:9 */
+  padding-bottom: 56.25%; /* 16:9 ratio */
   height: 0;
   overflow: hidden;
   margin-bottom: 30px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+
+  border-radius: 15px;  /* borde redondeado */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
 }
 
 .iframe-responsive iframe {
@@ -235,56 +254,36 @@ body {
   width: 100%;
   height: 100%;
   border: none;
+  border-radius: 15px;
 }
 
-.info-juego {
-  text-align: center;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: black; /* opcional */
-  border-radius: 10px;        /* opcional */
-  border-color: red;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* opcional */
-}
-
-.info-juego h2 {
-  color:#f4f4f4;
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.info-juego p {
-  color: #f4f4f4;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-
-/* Centrado de los enlaces sociales */
-.social-container {
-  display: flex;               /* en fila */
-  justify-content: center;     /* centrados horizontalmente */
-  gap: 20px;                   /* espacio entre ellos */
-  margin: 20px 0;              /* margen arriba y abajo */
-}
-
-/* Estilo de cada enlace */
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: red;                  /* color rojo para texto y SVGs con fill="currentColor" */
-}
-
-/* Tamaño y color de los iconos */
-.icon-rojo {
-  color: red;                  /* aplica el color rojo al SVG */
-  width: 40px;                 /* ancho del icono */
-  height: 40px;                /* alto del icono */
-}
-
-.social-link:hover {
-  color: #ff6666;
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+  
+  .nav-menu li {
+    margin: 5px 0;
+  }
+  
+  .item {
+    max-width: 90%;
+    flex-basis: 100%;
+  }
+  
+  .logo {
+    width: 50%;
+    height: 150px;
+    background-position: center center;
+  }
+  
+  .portada {
+    height: 150px;
+  }
+  
+  .formulario {
+    padding: 20px 20px 5%;
+  }
 }
