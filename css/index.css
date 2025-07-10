@@ -258,9 +258,8 @@ body {
 }
 
 /* Ajustes responsive */
-@media (max-width: 768px) {
+ 
   .nav-menu {
-    flex-direction: column;
     padding: 15px 0;
   }
   
@@ -286,4 +285,4 @@ body {
   .formulario {
     padding: 20px 20px 5%;
   }
-}
+
