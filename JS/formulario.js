@@ -1,43 +1,52 @@
-/*En este archivo vamos a definir el comportamiento del formulario*/
-/*extraer los valores de los campos*/
 
-//Declaramos el boton y le asignamos el evento//
 
-let btn = document.getElementById('enviar');
-btn.addEventListener('click', mostrarMensaje);
+document.addEventListener('DOMContentLoaded', function () {
+  let btn = document.getElementById('enviar');
+  btn.addEventListener('click', mostrarMensaje);
+});
 
 function mostrarMensaje(evt) {
-  evt.preventDefault(); // Evita que el formulario se envíe realmente
+  evt.preventDefault();
 
-  // Obtener valores del formulario
   let nombre = document.getElementById('nombre').value;
-  let apellido = document.getElementById('apellido').value;
   let edad = parseInt(document.getElementById('edad').value);
   let mensajeUsuario = document.getElementById('msj').value;
 
-  // Crear mensaje
-  let mensajeFinal = `Bienvenido/a ${nombre} ${apellido}, usted `;
+  if (nombre.trim() === '') {
+    showError('empty-name', "El nombre es obligatorio");
+  } else {
+    hideError('empty-name');
+  }
+
+  let mensajeFinal = `Bienvenido/a ${nombre}, usted `;
   mensajeFinal += (edad > 17)
     ? `es mayor, mensaje: ${mensajeUsuario}`
-    : `es menor, no puede participar de nuestros servidores igual deje su mensaje: ${mensajeUsuario}`;
+    : `es menor, no puede participar de nuestros servidores.
+       Igual deje su mensaje: ${mensajeUsuario}`;
 
-  // Mostrar el mensaje (en consola o podés mostrarlo en la página)
-  console.log(mensajeFinal);
-  
-  // Para mostrarlo en el HTML podés agregar este div en tu HTML:
-  // <div id="resultado"></div>
   let resultado = document.getElementById('resultado');
   if (!resultado) {
     resultado = document.createElement('div');
     resultado.id = 'resultado';
     document.getElementById('Formulario').appendChild(resultado);
   }
+
   resultado.innerText = mensajeFinal;
- /*/
- let contenedor = document.getElementById("mensaje");
-    contenedor.innerText = `Hola ${txtNombre} ${txtApellido}, tenés ${edad} años.`;
-/*/
-    
 }
 
+function showError(id, message) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.innerText = message;
+    el.style.color = 'red';
+    el.style.marginTop = '5px';
+    el.style.fontWeight = 'bold';
+  }
+}
 
+function hideError(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.innerText = '';
+  }
+}

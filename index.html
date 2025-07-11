@@ -113,17 +113,18 @@
     
     <Section id="Mapas">
 
-      
+      <h3>Mapa de Charnarus</h3>
+
       <div class="iframe-responsive">
        <iframe src="https://www.izurvive.com" allowfullscreen></iframe>
       </div>
-
       
+      <h3>Mapa de Livonia</h3>
       <div class="iframe-responsive">
       <iframe src="https://www.izurvive.com/livonia/" allowfullscreen></iframe>
       </div>
 
-     
+    <h3>Mapa de Sakhal</h3>
      <div class="iframe-responsive">
      <iframe src="https://www.izurvive.com/sakhal/" allowfullscreen></iframe>
      </div>
@@ -143,20 +144,27 @@
 <footer class="footer";
   
  <div id="Formulario">
-  <p>Contanos quien sos <br>
-    ¿Te gustaria unirte a Betta en DayZ?
-  </p>
-  <form class="formulario" action="">
-    <h3>Formulario</h3>
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required><br>
-    <input type="text" name="apellido" id="apellido" placeholder="Apellido" required><br>
-    <input type="number" name="edad" id="edad" placeholder="Edad" required><br>
-    <textarea name="msj" id="msj" placeholder="Ingrese su mensaje"></textarea><br>
-    <button id="enviar" type="submit">Enviar</button>
-  </form>
- </div>
+ <footer class="footer">
+  <div id="Formulario">
+    <p>Contanos quien sos <br>
+      ¿Te gustaría unirte a Betta en DayZ?
+    </p>
 
- <script src="../Dayz_Betta_Support/JS/formulario.js"></script>
+    <!-- Error para nombre -->
+    
+
+    <form class="formulario" action="">
+      <h3>Formulario</h3>
+      
+      <input type="text" name="nombre" id="nombre" placeholder="Nombre"><br>
+      <div id="empty-name" class="error"></div>
+      <input type="number" name="edad" id="edad" placeholder="Edad"><br>
+      <textarea name="msj" id="msj" placeholder="Ingrese su mensaje"></textarea><br>
+      <button id="enviar" type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="../Dayz_Betta_Support/JS/formulario.js"></script>
 
       <!--Seccion donde podemos contactarnos-->
 
